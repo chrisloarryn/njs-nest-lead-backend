@@ -74,9 +74,14 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
     
 ```mermaid
    flowchart LR
+     subgraph "LeadMdw"
+        LeadMdw[LeadMdw]
+        end
      LeadMdw -- Save Lead --> transactionalBackend -- Delete Lead --> transactionDatabase[(Database)]
+     
      transactionalBackend -- Save Lead --> transactionDatabase
-     transactionalBackend -- Receive Lead <-- transactionDatabase
+     transactionalBackend -- Receive Lead --> transactionDatabase
+     
      transactionDatabase -- Return Lead --> transactionalBackend
 ```
 
