@@ -3,17 +3,17 @@ FROM node:alpine AS builder
 
 WORKDIR /usr/app
 
-COPY package.json yarn.lock ./
+COPY package.json pnpm-lock.yaml ./
 
-# Instala las dependencias y luego elimina los archivos de caché
-RUN pnpm install --frozen-lockfile --prefer-frozen-lockfile --no-optional --no-shrinkwrap --no-package-lock --no-bin-links --prod && \
-    pnpm install --frozen-lockfile --prefer-frozen-lockfile --no-optional --no-shrinkwrap --no-package-lock --no-bin-links --only=dev && \
-    pnpm run clean:cache
+# Instala las dependencias y luego elimina los archivos de caché para reducir el tamaño de la imagen
+RUN npm install -g pnpm && pnpm install --frozen-lockfile && pnpm pnpm prune --prod && rm -rf /root/.npm
 
 COPY . .
 
 # Construye la aplicación
 RUN pnpm build
+
+
 
 # Etapa 2: Imagen de producción
 FROM node:alpine
@@ -21,11 +21,6 @@ FROM node:alpine
 ARG GOOGLE_CLOUD_JSON
 
 WORKDIR /usr/app
-
-RUN mkdir -p /usr/app/config /usr/app/keys
-
-# Si existe GOOGLE_CLOUD_JSON, copia el archivo service-account.json
-COPY --from=builder /usr/app/config ./config
 
 # Copia los archivos de la etapa de construcción
 COPY --from=builder /usr/app/dist ./dist
