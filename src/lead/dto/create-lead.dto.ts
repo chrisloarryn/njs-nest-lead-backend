@@ -17,71 +17,118 @@ export class CreateLeadDto {
   rut: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   dv: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   primerNombre: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   segundoNombre: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   primerApellido: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   segundoApellido: string;
 
-  @IsEmail()
+  @ApiProperty({ example: 'email@email.com' })
+  @IsEmail({
+        allow_display_name: true,
+        allow_utf8_local_part: true,
+        require_tld: true,
+      },
+      {
+        message: ErrorMessagesDTO.InvalidEmail,
+      }
+  )
   email: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   telMovil: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   canalRegistro: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   sucursal: string;
 
   @ApiProperty({ enum: ClasificationEnum, default: ClasificationEnum.Frio })
-  @IsEnum(ClasificationEnum)
+  @IsEnum(ClasificationEnum, {
+        message: ErrorMessagesDTO.InvalidEnum
+  })
   clasificacion: ClasificationEnum;
 
   @ApiProperty({ enum: StatusEnum, default: StatusEnum.SinGestion })
-  @IsEnum(StatusEnum)
+  @IsEnum(StatusEnum, {
+        message: ErrorMessagesDTO.InvalidEnum
+  })
   estado: StatusEnum;
 
   @ApiProperty({ enum: LeadType, default: LeadType.Trabajador })
-  @IsEnum(LeadType)
+  @IsEnum(LeadType, {
+        message: ErrorMessagesDTO.InvalidEnum
+  })
   tipoLead: LeadType;
 
+  @ApiProperty()
   @IsOptional()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   prioridad: string;
 
+  @ApiProperty()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   @IsOptional()
   ejecutivoAsignado: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   direccion: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   ciudad: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   comuna: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString({
+        message: ErrorMessagesDTO.InvalidString
+  })
   region: string;
 }

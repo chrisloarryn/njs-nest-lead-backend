@@ -13,5 +13,4 @@ export class ForbiddenErrorEntity extends ForbiddenException {
         example: HttpStatus.FORBIDDEN,
     })
     code: number;
-
 }

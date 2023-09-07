@@ -36,7 +36,7 @@ export class CommonExceptionFilter implements ExceptionFilter {
         Logger.debug(`isStringMessage: ${isStringMessage} | isArrayOfErrors: ${isArrayOfErrors}`, CommonExceptionFilter.name)
         const errors = isArrayOfErrors ? message['message'] : [message['message']];
 
-        const errorsList = isArrayOfErrors ?
+        const errorsList = isArrayOfErrors && errors.length > 0 ?
             errors.map((json) => JSON.parse(json)) :
             [{ name: 'error', reason: message['message'] }];
 

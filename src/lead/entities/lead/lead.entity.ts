@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-import { ClasificationEnum, StatusEnum } from '../enums';
+import { ClasificationEnum, StatusEnum } from '../../enums';
 
 export class Lead {
   @ApiProperty({ type: 'integer', format: 'int64', default: 1 })

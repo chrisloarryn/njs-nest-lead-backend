@@ -1,40 +1,42 @@
 const createOk = {
   success: true,
-  data: {
-    id: 'string',
-    rut: 'string',
-    dv: 'string',
-    primerNombre: 'string',
-    segundoNombre: 'string',
-    primerApellido: 'string',
-    segundoApellido: 'string',
-    telMovil: 'string',
-    canalRegistro: 'string',
-    sucursal: 'string',
-    clasificacion: 'Frio',
-    estado: 'SinGestion',
-    tipoLead: 'Trabajador',
-    direccion: 'string',
-    ciudad: 'string',
-    comuna: 'string',
-    region: 'string',
-  },
+  data: [
+    {
+      id: 'string',
+      rut: 'string',
+      dv: 'string',
+      primerNombre: 'string',
+      segundoNombre: 'string',
+      primerApellido: 'string',
+      segundoApellido: 'string',
+      telMovil: 'string',
+      canalRegistro: 'string',
+      sucursal: 'string',
+      clasificacion: 'Frio',
+      estado: 'SinGestion',
+      tipoLead: 'Trabajador',
+      direccion: 'string',
+      ciudad: 'string',
+      comuna: 'string',
+      region: 'string',
+    }
+  ],
 };
-const createForbiddenRequest = {
+const createNotFoundRequest = {
   success: false,
   message: 'an error has occurred',
   errors: [
     {
       name: 'error',
-      message: 'forbidden',
+      message: 'Not found example',
     },
   ],
 };
 
 module.exports = [
   {
-    id: 'retrieve',
-    url: '/api/v1/leads/:id',
+    id: 'all',
+    url: '/api/v1/leads',
     method: 'GET',
     variants: [
       {
@@ -47,8 +49,8 @@ module.exports = [
               case '200':
                 res.status(200).json(createOk);
                 break;
-              case '403':
-                res.status(403).json(createForbiddenRequest);
+                case '404':
+                res.status(404).json(createNotFoundRequest);
                 break;
               default:
                 res.status(204).json({success: false});

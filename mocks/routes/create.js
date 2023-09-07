@@ -51,7 +51,7 @@ module.exports = [
                 res.status(400).json(createBadRequest);
                 break;
               default:
-                res.status(204).json({});
+                res.status(204).json({success: false});
                 break;
             }
           },

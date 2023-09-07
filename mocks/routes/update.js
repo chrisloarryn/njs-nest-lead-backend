@@ -20,22 +20,32 @@ const createOk = {
     region: 'string',
   },
 };
-const createForbiddenRequest = {
+const createBadRequest = {
   success: false,
   message: 'an error has occurred',
   errors: [
     {
-      name: 'error',
-      message: 'forbidden',
+      name: 'rut',
+      message: 'rut is required',
+    },
+  ],
+};
+const notFoundRequest = {
+  success: false,
+  message: 'an error has occurred',
+  errors: [
+    {
+      name: 'not found',
+      message: 'not found example',
     },
   ],
 };
 
 module.exports = [
   {
-    id: 'retrieve',
+    id: 'update',
     url: '/api/v1/leads/:id',
-    method: 'GET',
+    method: 'PATCH',
     variants: [
       {
         id: 'success',
@@ -47,9 +57,11 @@ module.exports = [
               case '200':
                 res.status(200).json(createOk);
                 break;
-              case '403':
-                res.status(403).json(createForbiddenRequest);
+              case '400':
+                res.status(400).json(createBadRequest);
                 break;
+              case "404":
+                res.status(404).json(notFoundRequest);
               default:
                 res.status(204).json({success: false});
                 break;

@@ -105,6 +105,31 @@ pnpm install -D @mocks-server/main
 npx mocks-server     
 ```
 
+## Local environment
+```bash
+PORT=3000
+NODE_ENV=local
+SWAGGER_URL=api-docs
+AXIOS_TIMEOUT=30000
+AXIOS_MAX_REDIRECTS=5
+## this is the mock server url
+AXIOS_BASE_URL=http://localhost:3100/api/v1
+```
+
+### to start in local
+
+```bash
+pnpm start:dev
+```
+
+### to start using docker-compose
+
+```bash
+docker-compose up
+```
+
+#### esto levanta la base de datos y el api
+
 ## License
 
 Nest is [MIT licensed](LICENSE).
