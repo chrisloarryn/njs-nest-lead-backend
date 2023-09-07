@@ -73,16 +73,30 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## make components diagram with mermaid
     
 ```mermaid
-   flowchart LR
-     subgraph "LeadMdw"
-        LeadMdw[LeadMdw]
-        end
-     LeadMdw -- Save Lead --> transactionalBackend -- Delete Lead --> transactionDatabase[(Database)]
-     
-     transactionalBackend -- Save Lead --> transactionDatabase
-     transactionalBackend -- Receive Lead --> transactionDatabase
-     
-     transactionDatabase -- Return Lead --> transactionalBackend
+%% Define component styles
+classDef k8sClass fill:#f9f,stroke:#333,stroke-width:2px;
+classDef backendClass fill:#f9f,stroke:#333,stroke-width:2px;
+
+%% Define components
+flowchart LR;
+
+subgraph "k8s" 
+    LeadMdw[LeadMdw]
+    class LeadMdw k8sClass;
+end
+
+subgraph "transactional backend scope"
+    transactionalBackend[transactionalBackend]
+    class transactionalBackend backendClass;
+    transactionDatabase[transactionDatabase]
+    class transactionDatabase backendClass;
+end
+
+LeadMdw <--> transactionalBackend
+CRM-Dynamics <--> LeadMdw
+
+transactionalBackend <--> transactionDatabase[(Database)]
+
 ```
 
 ## License
