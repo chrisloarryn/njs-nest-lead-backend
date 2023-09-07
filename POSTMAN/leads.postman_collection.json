@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "5e86c5ab-b054-41b0-8a65-1b4a2b9fad63",
+		"name": "leads",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8636249",
+		"_collection_link": "https://peluca-team.postman.co/workspace/SAWA-PEC~d00680c3-620b-4b3b-ac7b-70269d6f2e13/collection/8636249-5e86c5ab-b054-41b0-8a65-1b4a2b9fad63?action=share&source=collection_link&creator=8636249"
+	},
+	"item": [
+		{
+			"name": "Mocks",
+			"item": [
+				{
+					"name": "mock post leads",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-status-code",
+								"value": "400",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3100/api/v1/leads",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"v1",
+								"leads"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "mock post leads",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-status-code",
+										"value": "201",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3100/api/v1/leads",
+									"host": [
+										"localhost"
+									],
+									"port": "3100",
+									"path": [
+										"api",
+										"v1",
+										"leads"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "da0a0f66-0d6b-4fe0-b04d-7e736337ac76"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-8A8dvFUvf2j1ZrN+GvoUnJY4G10\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Sep 2023 06:35:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"string\",\n        \"rut\": \"string\",\n        \"dv\": \"string\",\n        \"primerNombre\": \"string\",\n        \"segundoNombre\": \"string\",\n        \"primerApellido\": \"string\",\n        \"segundoApellido\": \"string\",\n        \"telMovil\": \"string\",\n        \"canalRegistro\": \"string\",\n        \"sucursal\": \"string\",\n        \"clasificacion\": \"Frio\",\n        \"estado\": \"SinGestion\",\n        \"tipoLead\": \"Trabajador\",\n        \"direccion\": \"string\",\n        \"ciudad\": \"string\",\n        \"comuna\": \"string\",\n        \"region\": \"string\"\n    }\n}"
+						},
+						{
+							"name": "mock post leads",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-status-code",
+										"value": "400",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3100/api/v1/leads",
+									"host": [
+										"localhost"
+									],
+									"port": "3100",
+									"path": [
+										"api",
+										"v1",
+										"leads"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "8034135e-a609-46fd-8c0a-e416c7f4660a"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-wh7bOpB7zc+3kenOHG+21aEZHyU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Sep 2023 06:36:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"an error has occurred\",\n    \"errors\": [\n        {\n            \"name\": \"rut\",\n            \"message\": \"rut is required\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "mock get one lead",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-status-code",
+								"value": "403",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3100/api/v1/leads/idid",
+							"host": [
+								"localhost"
+							],
+							"port": "3100",
+							"path": [
+								"api",
+								"v1",
+								"leads",
+								"idid"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "mock get one lead",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-status-code",
+										"value": "200",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3100/api/v1/leads/idid",
+									"host": [
+										"localhost"
+									],
+									"port": "3100",
+									"path": [
+										"api",
+										"v1",
+										"leads",
+										"idid"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "5709e178-5426-4e9a-9383-c24193f3e8e1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "379"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17b-8A8dvFUvf2j1ZrN+GvoUnJY4G10\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Sep 2023 06:36:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": \"string\",\n        \"rut\": \"string\",\n        \"dv\": \"string\",\n        \"primerNombre\": \"string\",\n        \"segundoNombre\": \"string\",\n        \"primerApellido\": \"string\",\n        \"segundoApellido\": \"string\",\n        \"telMovil\": \"string\",\n        \"canalRegistro\": \"string\",\n        \"sucursal\": \"string\",\n        \"clasificacion\": \"Frio\",\n        \"estado\": \"SinGestion\",\n        \"tipoLead\": \"Trabajador\",\n        \"direccion\": \"string\",\n        \"ciudad\": \"string\",\n        \"comuna\": \"string\",\n        \"region\": \"string\"\n    }\n}"
+						},
+						{
+							"name": "mock get one lead",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-status-code",
+										"value": "403",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3100/api/v1/leads/idid",
+									"host": [
+										"localhost"
+									],
+									"port": "3100",
+									"path": [
+										"api",
+										"v1",
+										"leads",
+										"idid"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "afa39867-7f77-4f66-905c-a66a5cb924cf"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-+uhwuBZBRGnzZVJBPPoUBBtM14Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 07 Sep 2023 06:36:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"an error has occurred\",\n    \"errors\": [\n        {\n            \"name\": \"error\",\n            \"message\": \"forbidden\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/lead",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rut\": \"string\",\n    \"dv\": \"string\",\n    \"primerNombre\": \"string\",\n    \"segundoNombre\": \"string\",\n    \"primerApellido\": \"string\",\n    \"segundoApellido\": \"string\",\n    \"telMovil\": \"string\",\n    \"canalRegistro\": \"string\",\n    \"sucursal\": \"string\",\n    \"clasificacion\": \"Frio\",\n    \"estado\": \"SinGestion\",\n    \"tipoLead\": \"Trabajador\",\n    \"direccion\": \"string\",\n    \"ciudad\": \"string\",\n    \"comuna\": \"string\",\n    \"region\": \"string\",\n    \"email\": \"email@email.cl\",\n    \"id\": 222\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/leads",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"leads"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -5,7 +5,7 @@ import {
   Body,
   Patch,
   Param,
-  Delete, HttpStatus,
+  Delete, HttpStatus, UseInterceptors,
 } from '@nestjs/common';
 import { LeadService } from './lead.service';
 import { CreateLeadDto } from './dto/create-lead.dto';
@@ -13,8 +13,10 @@ import { UpdateLeadDto } from './dto/update-lead.dto';
 import { ApiResponse } from '@nestjs/swagger';
 import {Lead} from "./entities/lead.entity";
 import {BadRequestEntity, ConflictErrorEntity, InternalServerErrorEntity, ForbiddenErrorEntity} from "../common/entities";
+import {LoggerInterceptor} from "../common/interceptor/logger.interceptor";
 
-@Controller('lead')
+@Controller('leads')
+@UseInterceptors(LoggerInterceptor)
 export class LeadController {
   constructor(private readonly leadService: LeadService) {}
 

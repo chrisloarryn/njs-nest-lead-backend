@@ -1,14 +1,19 @@
 import { IsString, IsEmail, IsEnum, IsOptional } from 'class-validator';
 import { ClasificationEnum, StatusEnum, LeadType } from './../enums';
 import { ApiProperty } from '@nestjs/swagger';
+import {ErrorMessagesDTO} from "../../common/enums";
 
 export class CreateLeadDto {
   @ApiProperty()
-  @IsString()
+  @IsString(
+      {message: ErrorMessagesDTO.InvalidString}
+  )
   id: string;
 
   @ApiProperty()
-  @IsString()
+  @IsString(
+        {message: ErrorMessagesDTO.InvalidString}
+  )
   rut: string;
 
   @ApiProperty()

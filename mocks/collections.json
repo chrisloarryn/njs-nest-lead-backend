@@ -1,0 +1,9 @@
+[
+  {
+    "id": "base",
+    "routes": [
+      "create:success",
+      "retrieve:success"
+    ]
+  }
+]

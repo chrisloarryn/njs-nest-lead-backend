@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import {Logger, ValidationPipe, VersioningType} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import {Environment, varMsjApp} from "./common/enums";
+import {CommonExceptionFilter} from "./common/exceptions";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -72,7 +73,7 @@ async function bootstrap() {
     }
   }));
 
-  // app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
+  app.useGlobalFilters(new CommonExceptionFilter());
   app.setGlobalPrefix(globalPrefix);
 
   // Starts listening for shutdown hooks

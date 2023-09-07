@@ -93,6 +93,18 @@ CRM <---> LeadMdw
 transactionalBackend <--> transactionDatabase[(Database)]
 ```
 
+## Mock server
+
+#### install mockserver
+```bash
+pnpm install -D @mocks-server/main
+```
+
+#### start mockserver
+```bash
+npx mocks-server     
+```
+
 ## License
 
 Nest is [MIT licensed](LICENSE).

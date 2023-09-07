@@ -1,14 +1,16 @@
-import { Injectable } from '@nestjs/common';
+import {BadRequestException, Injectable} from '@nestjs/common';
 import { CreateLeadDto } from './dto/create-lead.dto';
 import { UpdateLeadDto } from './dto/update-lead.dto';
 
 @Injectable()
 export class LeadService {
   create(createLeadDto: CreateLeadDto) {
+    throw new BadRequestException('Bad Request');
     return 'This action adds a new lead';
   }
 
   findAll() {
+    throw new BadRequestException('Bad Request');
     return `This action returns all lead`;
   }
 
